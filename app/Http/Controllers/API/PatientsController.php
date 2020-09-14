@@ -27,6 +27,17 @@ class PatientsController extends Controller
     public function store(Request $request)
     {
         //
+        $patients=new patients();
+        $patients->firstname=$request->firstname;
+        $patients->middlename=$request->middlename;
+        $patients->lastname=$request->lastname;
+        $patients->address=$request->address;
+        $patients->contactnumber=$request->contactnumber;
+        $patients->userid=$request->userid;
+        $patients->save();
+        return  [
+            'patients'=>$patients
+        ];
     }
 
     /**
