@@ -4,6 +4,8 @@
             <table class="table table-bordered table-hover">
                 <thead>
                 <tr>
+                    <td></td>
+                    <td></td>
                     <td>
                         First Name
                     </td>
@@ -15,6 +17,8 @@
                 </thead>
                 <tbody v-for="patient in data">
                 <tr>
+                    <td><a href="#">Edit</a></td>
+                    <td><a href="#">Delete</a></td>
                     <td>{{ patient.firstname }}</td>
                     <td>{{ patient.lastname }}</td>
                     <td>{{ patient.address }}</td>

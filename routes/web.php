@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 /*Route::get("patients","PatientsController@get")->name("patients");*/
+
+
 Route::get("/api/patients", "API\PatientsController@index");
 Route::post('/api/patients/post', 'API\PatientsController@store');
 Route::get("/token", function () {
@@ -26,4 +28,5 @@ Route::get("/token", function () {
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+/*Route::get('/', 'HomeController@index')->name('home');*/
+Route::get('/{any}', 'HomeController@index')->where('any', '.*');

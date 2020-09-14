@@ -36,6 +36,19 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <router-link to="/patients" class="nav-link">
+                                <i class="fas fa-users nav-icon"></i>
+                                Patients
+                            </router-link>
+
+                        </li>
+                        <li class="nav-item">
+                            <router-link to="/users" class="nav-link">
+                                <i class="fas fa-users nav-icon"></i>
+                                Users
+                            </router-link>
+                        </li>
 
                     </ul>
 
@@ -77,9 +90,10 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            <router-view></router-view>
         </main>
     </div>
 </div>
 </body>
 </html>
+

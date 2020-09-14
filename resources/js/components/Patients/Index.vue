@@ -7,11 +7,8 @@
                         <h3>Patients</h3>
                     </div>
                     <div class="float-right">
-
                         <b-button v-b-modal.add-edit-modal><span class=""></span> Add Patientsl</b-button>
-                        <b-modal id="add-edit-modal" title="Add Edit Patients">
-                            <add-edit-component></add-edit-component>
-                        </b-modal>
+                       <!-- <add-edit-component></add-edit-component>-->
                     </div>
                 </div>
                 <div class="card-body">
