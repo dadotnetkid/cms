@@ -1,44 +1,36 @@
 <template>
     <div class="row">
         <div class="col-12">
-            <table class="table table-bordered table-hover">
-                <thead>
-                <tr>
-                    <td>
-                        First Name
-                    </td>
-                    <td>
-                        Last Name
-                    </td>
-                    <td>address</td>
-                </tr>
-                </thead>
-                <tbody v-for="patient in data">
-                <tr>
-                    <td>{{ patient.firstname }}</td>
-                    <td>{{ patient.lastname }}</td>
-                    <td>{{ patient.address }}</td>
-                </tr>
-                </tbody>
-            </table>
+            <div class="card ">
+                <div class="card-header">
+                    <div class="float-left">
+                        <h3>Patients</h3>
+                    </div>
+                    <div class="float-right">
+
+                        <b-button v-b-modal.add-edit-modal><span class=""></span> Add Patientsl</b-button>
+                        <b-modal id="add-edit-modal" title="Add Edit Patients">
+                            <add-edit-component></add-edit-component>
+                        </b-modal>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <patients-component></patients-component>
+                </div>
+            </div>
         </div>
     </div>
+
 </template>
 
 <script>
+
+import AddEditComponent from "./AddEditComponent";
+import PatientsComponent from "./PatientsComponent";
+
 export default {
-    data() {
-        return {
-            data: null
-        }
-    },
-    mounted() {
-        axios
-            .get("http://127.0.0.1:8000/api/patients")
-            .then(response => {
-                this.data = response.data
-            });
-    }
+    components: {PatientsComponent, AddEditComponent},
+
 }
 </script>
 
